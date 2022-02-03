@@ -14,6 +14,7 @@ export default function News(props) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
+  // paawan
   document.title = `NewsMonkey - ${capitalizeFirstLetter(props.category)}`;
   // constructor(props) {
   //   super(props);
