@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 import NewsItem from "./NewsItem";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 export default function News(props) {
   const [articles, setarticles] = useState([]);
@@ -93,6 +94,13 @@ export default function News(props) {
         NewsMoney - Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
       {loading && <Loader />}
+      <InfiniteScroll
+        dataLength={articles.length}
+        next={fetchMoreData}
+        hasMore={articles.length !== totalResults}
+        loader={<Loader />}
+      >
+        {
           <div className="container">
             <div className="row">
               {articles.map((element) => {
@@ -116,6 +124,8 @@ export default function News(props) {
               })}
             </div>
           </div>
+        }
+      </InfiniteScroll>
 
       {/* 
         there are the next and the previous buttons --- 
