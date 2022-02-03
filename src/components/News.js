@@ -95,7 +95,7 @@ export default function News(props) {
       </h1>
       {loading && <Loader />}
       <InfiniteScroll
-        dataLength={articles.length}
+        dataLength={articles.length > 0}
         next={fetchMoreData}
         hasMore={articles.length !== totalResults}
         loader={<Loader />}
