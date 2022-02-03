@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

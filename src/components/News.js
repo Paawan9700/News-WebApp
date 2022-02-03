@@ -9,7 +9,7 @@ export default function News(props) {
   const [loading, setloading] = useState(true);
   const [page, setpage] = useState(1);
   const [totalResults, settotalResults] = useState(0);
-
+ 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -52,6 +52,7 @@ export default function News(props) {
   };
 
   useEffect(() => {
+    // react-hooks/exhaustive-deps
     updatenews();
   }, []);
 
